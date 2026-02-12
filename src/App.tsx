@@ -14,6 +14,7 @@ import { CustomerDetail } from './pages/CustomerDetail';
 import { Products } from './pages/Products';
 import { TemplateChat } from './pages/TemplateChat';
 import { Reports } from './pages/Reports';
+import { Settings } from './pages/Settings';
 
 function App() {
   const { session, isLoading, loadSession } = useAppStore();
@@ -77,7 +78,7 @@ function App() {
                   <Route path="/produk" element={<Products />} />
                   <Route path="/template-chat" element={<TemplateChat />} />
                   <Route path="/laporan" element={<Reports />} />
-                  <Route path="/pengaturan" element={<PlaceholderPage title="Pengaturan" />} />
+                  <Route path="/pengaturan" element={<Settings />} />
                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                   <Route path="*" element={<Navigate to="/dashboard" replace />} />
                 </Routes>
@@ -91,23 +92,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
-// Placeholder component for pages not yet implemented
-const PlaceholderPage = ({ title }: { title: string }) => {
-  return (
-    <div className="p-6">
-      <div className="bg-white rounded-lg shadow p-8 text-center">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">{title}</h1>
-        <p className="text-gray-600 mb-4">
-          Halaman ini sedang dalam pengembangan.
-        </p>
-        <div className="text-6xl mb-4">🚧</div>
-        <p className="text-sm text-gray-500">
-          Fitur lengkap akan ditambahkan dalam versi berikutnya.
-        </p>
-      </div>
-    </div>
-  );
-};
 
 export default App;
