@@ -99,11 +99,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r border-gray-200 transition-transform duration-300 z-30 ${
+        className={`fixed top-[57px] left-0 bottom-0 w-64 bg-white border-r border-gray-200 transition-transform duration-300 z-30 flex flex-col ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } lg:translate-x-0`}
       >
-        <nav className="p-4 space-y-1">
+        <nav className="p-4 space-y-1 flex-1 overflow-y-auto">
           {menuItems.map((item) => (
             <Link
               key={item.path}
@@ -114,7 +114,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
-              <span className="text-xl">{item.icon}</span>
+              <span className="text-xl flex-shrink-0">{item.icon}</span>
               <span>{item.label}</span>
             </Link>
           ))}
