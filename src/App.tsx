@@ -11,6 +11,7 @@ import { Orders } from './pages/Orders';
 import { OrderDetail } from './pages/OrderDetail';
 import { Customers } from './pages/Customers';
 import { CustomerDetail } from './pages/CustomerDetail';
+import { Products } from './pages/Products';
 
 function App() {
   const { session, isLoading, loadSession } = useAppStore();
@@ -71,7 +72,7 @@ function App() {
                   <Route path="/pesanan/:id" element={<OrderDetail />} />
                   <Route path="/pelanggan" element={<Customers />} />
                   <Route path="/pelanggan/:id" element={<CustomerDetail />} />
-                  <Route path="/produk" element={<PlaceholderPage title="Produk" />} />
+                  <Route path="/produk" element={<Products />} />
                   <Route path="/template-chat" element={<PlaceholderPage title="Template Chat" />} />
                   <Route path="/laporan" element={<PlaceholderPage title="Laporan" />} />
                   <Route path="/pengaturan" element={<PlaceholderPage title="Pengaturan" />} />
