@@ -9,6 +9,8 @@ import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
 import { Orders } from './pages/Orders';
 import { OrderDetail } from './pages/OrderDetail';
+import { Customers } from './pages/Customers';
+import { CustomerDetail } from './pages/CustomerDetail';
 
 function App() {
   const { session, isLoading, loadSession } = useAppStore();
@@ -67,7 +69,8 @@ function App() {
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/pesanan" element={<Orders />} />
                   <Route path="/pesanan/:id" element={<OrderDetail />} />
-                  <Route path="/pelanggan" element={<PlaceholderPage title="Pelanggan" />} />
+                  <Route path="/pelanggan" element={<Customers />} />
+                  <Route path="/pelanggan/:id" element={<CustomerDetail />} />
                   <Route path="/produk" element={<PlaceholderPage title="Produk" />} />
                   <Route path="/template-chat" element={<PlaceholderPage title="Template Chat" />} />
                   <Route path="/laporan" element={<PlaceholderPage title="Laporan" />} />

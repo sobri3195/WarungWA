@@ -363,6 +363,22 @@ export const exportProductsToExcel = async (shopId: string): Promise<void> => {
 // ============================================================
 
 /**
+ * Export any data to CSV
+ */
+export const exportToCSV = (data: any[], filename: string): void => {
+  const csv = Papa.unparse(data);
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  
+  URL.revokeObjectURL(url);
+};
+
+/**
  * Export customers to CSV
  */
 export const exportCustomersToCSV = async (shopId: string): Promise<void> => {
@@ -377,16 +393,7 @@ export const exportCustomersToCSV = async (shopId: string): Promise<void> => {
     catatan: c.notes || '',
   }));
   
-  const csv = Papa.unparse(data);
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `Customers-${Date.now()}.csv`;
-  a.click();
-  
-  URL.revokeObjectURL(url);
+  exportToCSV(data, `Customers-${Date.now()}.csv`);
 };
 
 // ============================================================
