@@ -2,13 +2,14 @@
 
 ## 📋 Requirements
 
-- **Node.js**: Version 18.x atau 20.x
-- **npm**: Version 9.x atau lebih tinggi
-- **Browser Modern**: Chrome, Firefox, Safari, atau Edge (untuk IndexedDB support)
+- **Node.js**: v18.x or v20.x (recommended)
+- **npm**: v9.x or higher
+- **Modern Browser**: Chrome, Firefox, Safari, or Edge (latest version)
+- **Internet Connection**: Required for initial dependency installation
 
-## 🚀 Installation Steps
+## 🚀 Quick Start
 
-### 1. Clone Repository
+### 1. Clone or Download
 
 ```bash
 git clone <repository-url>
@@ -21,21 +22,33 @@ cd warungwa
 npm install
 ```
 
+This will install all required dependencies including:
+- React 19
+- Vite
+- TypeScript
+- Tailwind CSS
+- Dexie.js (IndexedDB wrapper)
+- React Router
+- Zustand (State management)
+- @react-pdf/renderer
+- dnd-kit (Drag & drop)
+- And more...
+
 ### 3. Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Aplikasi akan berjalan di `http://localhost:5173`
+The application will start at `http://localhost:5173` (or another port if 5173 is busy).
 
-### 4. Build untuk Production
+### 4. Build for Production
 
 ```bash
 npm run build
 ```
 
-File static akan di-generate di folder `dist/`
+This creates an optimized static build in the `dist/` directory.
 
 ### 5. Preview Production Build
 
@@ -43,138 +56,218 @@ File static akan di-generate di folder `dist/`
 npm run preview
 ```
 
-## 🌐 Deploy ke Vercel
+## 🌐 Deploy to Vercel
 
 ### Option 1: Via Vercel CLI
 
+1. Install Vercel CLI:
 ```bash
-# Install Vercel CLI
 npm install -g vercel
+```
 
-# Login ke Vercel
-vercel login
-
-# Deploy
-vercel
-
-# Deploy ke production
+2. Deploy:
+```bash
+npm run build
 vercel --prod
 ```
 
 ### Option 2: Via Vercel Dashboard
 
-1. Push code ke GitHub/GitLab/Bitbucket
-2. Import project di [vercel.com](https://vercel.com)
-3. Vercel akan auto-detect Vite configuration
-4. Click "Deploy"
+1. Push your code to GitHub, GitLab, or Bitbucket
+2. Go to [vercel.com](https://vercel.com)
+3. Click "New Project"
+4. Import your repository
+5. Configure:
+   - Framework Preset: **Vite**
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+6. Click "Deploy"
 
-### Vercel Configuration
+### Option 3: Via Vercel Git Integration
 
-Buat file `vercel.json` di root project (opsional):
+1. Connect your repository to Vercel
+2. Vercel will automatically detect Vite configuration
+3. Every push to main branch will trigger automatic deployment
 
-```json
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite"
-}
+## 📦 Deploy to Other Platforms
+
+### Netlify
+
+1. Build the project:
+```bash
+npm run build
 ```
+
+2. Deploy via Netlify CLI:
+```bash
+npm install -g netlify-cli
+netlify deploy --prod --dir=dist
+```
+
+Or drag and drop the `dist` folder to [netlify.com/drop](https://app.netlify.com/drop)
+
+### GitHub Pages
+
+1. Update `vite.config.ts` to add base path:
+```typescript
+export default defineConfig({
+  base: '/your-repo-name/',
+  // ... other config
+})
+```
+
+2. Build and deploy:
+```bash
+npm run build
+npx gh-pages -d dist
+```
+
+### Static File Hosting
+
+Since this is a 100% client-side application, you can deploy to any static file hosting:
+- AWS S3 + CloudFront
+- Firebase Hosting
+- Cloudflare Pages
+- Surge.sh
+- Any web server (Apache, Nginx, etc.)
+
+Just upload the contents of the `dist/` folder after running `npm run build`.
 
 ## 🗄️ Data Storage
 
-Aplikasi ini menggunakan **IndexedDB** untuk menyimpan data di browser. Data akan tetap ada meskipun browser ditutup, kecuali:
+WarungWA stores all data locally in the browser using **IndexedDB**:
 
-- Cache browser dibersihkan
-- User menghapus data aplikasi
+- **Database Name**: `WarungWADB`
+- **Storage Location**: Browser's IndexedDB storage
+- **Persistence**: Data persists until manually cleared
+- **Size Limit**: Typically 50MB+ (browser dependent)
+
+### First Run
+
+On first run, the app automatically seeds demo data including:
+- 1 Demo shop
+- 3 Product categories
+- 3 Sample products with variants
+- 2 Sample customers
+- 1 Sample order
+- Default message templates
+- Operating hours configuration
 
 ### Backup & Restore
 
-Gunakan fitur Export/Import di halaman **Pengaturan** untuk:
-- Export semua data ke file JSON
-- Import data dari backup JSON
-- Merge data tanpa duplikasi
+Use the **Export/Import** feature in Settings to:
+- Export all data as JSON backup
+- Import data from previous backup
+- Merge data to avoid duplicates
 
-## 🔧 Environment Variables
+## 🔧 Configuration
 
-Aplikasi ini **tidak memerlukan** environment variables karena berjalan 100% di client-side.
+### Environment Variables (Optional)
 
-## 📦 Project Structure
+Create `.env` file in the root directory:
 
-```
-warungwa/
-├── src/
-│   ├── lib/
-│   │   ├── db/           # Dexie database schema & seed
-│   │   ├── stores/       # Zustand state management
-│   │   ├── services/     # CRUD services
-│   │   ├── utils/        # Utility functions (WhatsApp, PDF, etc)
-│   │   └── validators/   # Zod schemas
-│   ├── components/
-│   │   ├── ui/           # Reusable UI components
-│   │   ├── layout/       # Layout components
-│   │   └── orders/       # Order-specific components (Kanban)
-│   ├── pages/            # Page components
-│   ├── types/            # TypeScript type definitions
-│   └── assets/           # Static assets
-├── docs/                 # Documentation
-├── public/               # Public static files
-└── package.json
+```env
+# Optional: Custom settings can be added here
+VITE_APP_NAME=WarungWA
+VITE_APP_VERSION=1.0.0
 ```
 
-## 🛠️ Tech Stack
+### Customize Shop Info
 
-- **React 18** - UI library
-- **Vite** - Build tool & dev server
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Dexie.js** - IndexedDB wrapper
-- **Zustand** - State management
-- **React Router** - Routing
-- **React Hook Form** - Form handling
-- **Zod** - Schema validation
-- **dnd-kit** - Drag & drop (Kanban)
-- **@react-pdf/renderer** - PDF generation
-- **Recharts** - Charts & analytics
-- **xlsx** - Excel export
-- **papaparse** - CSV parsing
+After first login:
+1. Go to **Pengaturan** (Settings)
+2. Update shop name, address, phone, logo
+3. Configure operating hours
+4. Set up shipping areas
+5. Customize message templates
 
 ## 🐛 Troubleshooting
 
-### IndexedDB tidak bekerja
+### Port Already in Use
 
-Pastikan browser Anda support IndexedDB:
-- Buka DevTools → Application → Storage → IndexedDB
-- Jika ada error, coba clear browser cache
-
-### Build gagal
-
+If port 5173 is busy:
 ```bash
-# Clear node_modules and reinstall
+npm run dev -- --port 3000
+```
+
+### Build Errors
+
+Clear cache and reinstall:
+```bash
 rm -rf node_modules package-lock.json
 npm install
 npm run build
 ```
 
-### Data hilang
+### Browser Compatibility Issues
 
-- Pastikan tidak menggunakan Incognito/Private mode
-- Jangan clear browser data
-- Gunakan fitur Export untuk backup rutin
+Make sure you're using a modern browser:
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
 
-## 📝 Notes
+### IndexedDB Not Available
 
-1. **Offline First**: Aplikasi bisa berjalan offline setelah pertama kali dimuat
-2. **No Backend Required**: Semua data tersimpan di browser
-3. **WhatsApp Integration**: Menggunakan Click-to-Chat (wa.me), bukan WhatsApp Business API resmi
-4. **Multi-user**: Role switching hanya untuk demo, tidak ada real authentication
+If running in private/incognito mode, some browsers restrict IndexedDB. Use normal browsing mode.
+
+### Clear All Data
+
+To reset the app:
+1. Open browser DevTools (F12)
+2. Go to Application > IndexedDB
+3. Delete `WarungWADB`
+4. Refresh the page
+
+## 📱 PWA (Progressive Web App) - Optional
+
+To enable offline support, add service worker configuration:
+
+1. Install PWA plugin:
+```bash
+npm install -D vite-plugin-pwa
+```
+
+2. Update `vite.config.ts`:
+```typescript
+import { VitePWA } from 'vite-plugin-pwa'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'WarungWA',
+        short_name: 'WarungWA',
+        description: 'Kelola katalog, pelanggan, dan pesanan',
+        theme_color: '#2563eb',
+      }
+    })
+  ]
+})
+```
+
+## 🔒 Security Notes
+
+- All data stored locally in browser
+- No backend/server required
+- No data transmitted over network
+- WhatsApp integration uses wa.me public links only
+- No WhatsApp API credentials required
+
+## 📄 License
+
+This is a demo/template project. Modify as needed for your use case.
 
 ## 🆘 Support
 
-Jika ada masalah, check:
-1. Node version: `node --version` (harus 18.x atau 20.x)
-2. Browser console untuk error messages
-3. IndexedDB di DevTools
+For issues or questions:
+1. Check browser console for errors
+2. Verify Node.js version
+3. Clear browser cache and IndexedDB
+4. Rebuild from clean install
 
 ---
 
-**Happy Coding! 🚀**
+**Ready to start?** Run `npm run dev` and go to `http://localhost:5173`! 🚀

@@ -1,88 +1,91 @@
 # 📱 WarungWA
 
-**Kelola katalog, pelanggan, dan pesanan — langsung closing lewat WhatsApp.**
+> **Kelola katalog, pelanggan, dan pesanan — langsung closing lewat WhatsApp.**
 
 Aplikasi web untuk UMKM (toko online kecil, reseller, F&B) yang membantu mengelola katalog produk, pelanggan, pipeline pesanan, dan template chat WhatsApp agar proses closing lebih cepat.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+**🎯 100% Frontend-Only | ⚡ Offline-First | 🚀 Deploy ke Vercel dalam 5 Menit**
+
+![WarungWA](https://img.shields.io/badge/React-19-blue) ![Vite](https://img.shields.io/badge/Vite-5-purple) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3-cyan)
+
+---
 
 ## ✨ Fitur Utama
 
-### 🛍️ 1. Katalog Produk
-- CRUD produk lengkap dengan kategori
-- Varian/opsi produk (ukuran, warna, level pedas, dll)
-- Status aktif/nonaktif
-- Pencarian & filter kategori
-- Import produk via CSV
+### 🛍️ Katalog Produk
+- ✅ CRUD produk lengkap (nama, harga, kategori, deskripsi)
+- ✅ Varian produk dengan harga adjustment (ukuran, level pedas, dll)
+- ✅ Status aktif/nonaktif per produk
+- ✅ Pencarian & filter kategori
+- ✅ Import produk dari CSV
 
-### 👥 2. Manajemen Pelanggan (CRM Lite)
-- CRUD data pelanggan
-- Tag pelanggan (multi-tag)
-- Level pelanggan: Retail / Reseller / Grosir
-- Harga per level pelanggan
-- Riwayat pesanan per pelanggan
-- Deteksi duplikat nomor WhatsApp
+### 👥 CRM Pelanggan
+- ✅ CRUD pelanggan (nama, nomor WA, catatan)
+- ✅ Multi-tag untuk segmentasi
+- ✅ Level pelanggan (Retail, Reseller, Grosir) dengan harga khusus
+- ✅ Riwayat pesanan per pelanggan
+- ✅ Deteksi duplikat nomor WhatsApp
 
-### 📦 3. Pipeline Pesanan
-- Status pipeline: Baru → Konfirmasi → Dikemas → Dikirim → Selesai
-- **Kanban Board** dengan drag & drop
-- List view dengan sorting & filter
-- Label prioritas (Normal / Urgent)
-- Activity log per pesanan
-- Quick Cart untuk input cepat
-- Template pesanan (paket produk)
+### 📦 Pipeline Pesanan
+- ✅ Status pipeline: Baru → Konfirmasi → Dikemas → Dikirim → Selesai
+- ✅ Tampilan **Kanban Board** (drag & drop) + List view
+- ✅ Detail pesanan lengkap (item, qty, ongkir, diskon)
+- ✅ Status pembayaran (Belum Bayar, DP, Lunas)
+- ✅ Prioritas pesanan (Normal/Urgent)
+- ✅ Activity log (siapa ubah status & kapan)
 
-### 💰 4. Manajemen Pembayaran
-- Status pembayaran: Belum Bayar / DP / Lunas
-- Metode pembayaran: Cash / Transfer / QRIS / COD
-- Tracking pembayaran per order
+### 💬 Template Chat WhatsApp
+- ✅ Template pesan dengan variabel: `{nama}`, `{total}`, `{order_id}`, `{alamat}`
+- ✅ Multi-bahasa (Indonesia/English)
+- ✅ Quick actions: tombol **"Kirim WA"** buka `wa.me` otomatis
+- ✅ Auto-reply berbasis jam operasional
 
-### 🚚 5. Ongkir & Pengiriman
-- Daftar area pengiriman
-- Tarif ongkir per area
-- Auto-hit ongkir saat buat order
+### 📄 Invoice PDF
+- ✅ Generate invoice dari data order
+- ✅ Branding toko (nama, logo, alamat, WA)
+- ✅ Download PDF langsung dari browser
 
-### 💬 6. Template Chat WhatsApp
-- Template pesan dengan variabel dinamis
-- Variabel: {nama}, {total}, {order_id}, {alamat}, dll
-- Multi-bahasa (ID / EN)
-- Quick action "Kirim WA" → buka wa.me dengan pesan terisi otomatis
-- Auto-reply berbasis jam operasional
+### 📊 Analytics & Laporan
+- ✅ Dashboard dengan statistik real-time
+- ✅ Grafik omzet 7 hari terakhir
+- ✅ Produk terlaris
+- ✅ Export Excel/CSV (pelanggan, pesanan, produk)
 
-### 📄 7. Invoice PDF
-- Generate invoice dari data order
-- Branding toko (logo, nama, alamat)
-- Download PDF
+### 🏪 Multi-Toko/Cabang
+- ✅ Kelola beberapa toko dalam satu aplikasi
+- ✅ Data terpisah per toko
+- ✅ Switch toko dengan mudah
 
-### 📊 8. Laporan & Analytics
-- Grafik omzet per hari/minggu
-- Produk terlaris
-- Customer paling sering order
-- Export Excel/CSV
+### ⚙️ Fitur Tambahan
+- ✅ Manajemen ongkir per area
+- ✅ Quick Cart & Template Order
+- ✅ Reminder follow-up pesanan
+- ✅ Multi-admin dengan role (Owner/Admin/Staff)
+- ✅ Backup/Restore data (JSON export/import)
+- ✅ Fully responsive UI
 
-### 🏪 9. Multi-Toko / Cabang
-- Buat beberapa toko (Cabang A, B, C)
-- Data terpisah per toko
-- Switch antar toko dengan mudah
+---
 
-### ⏰ 10. Reminder & Follow-up
-- Set reminder per order
-- Notifikasi browser (jika diizinkan)
-- Reminder due hari ini tampil di dashboard
+## 🚀 Tech Stack
 
-### 🔐 11. Multi-Admin + Role (Offline Mode)
-- Role: Owner / Admin / Staff
-- Pembatasan akses berbasis UI
-- Activity log untuk audit
+| Technology | Purpose |
+|------------|---------|
+| **React 19** | UI Framework |
+| **Vite** | Build Tool & Dev Server |
+| **TypeScript** | Type Safety |
+| **Tailwind CSS** | Styling |
+| **React Router** | Client-side Routing |
+| **Zustand** | State Management |
+| **Dexie.js** | IndexedDB Wrapper (Local Storage) |
+| **@dnd-kit** | Drag & Drop Kanban |
+| **React Hook Form + Zod** | Form Handling & Validation |
+| **@react-pdf/renderer** | PDF Invoice Generation |
+| **xlsx + papaparse** | Excel/CSV Export |
+| **Recharts** | Charts & Analytics |
 
-### 📥 12. Export & Import
-- Export JSON (full backup)
-- Export Excel/CSV (pelanggan, pesanan)
-- Import JSON dengan merge otomatis
-- Import CSV produk
+---
 
-## 🚀 Quick Start
+## 📦 Quick Start
 
 ```bash
 # Install dependencies
@@ -98,22 +101,27 @@ npm run build
 npm run preview
 ```
 
-Baca [docs/INSTALLATION.md](docs/INSTALLATION.md) untuk panduan lengkap.
+**🌐 Deploy to Vercel:**
+```bash
+vercel --prod
+```
 
-## 🛠️ Tech Stack
+📖 **Full installation guide:** [docs/INSTALLATION.md](./docs/INSTALLATION.md)
 
-| Category | Technology |
-|----------|-----------|
-| **Framework** | React 18 + Vite + TypeScript |
-| **Styling** | Tailwind CSS |
-| **Routing** | React Router v6 |
-| **State Management** | Zustand |
-| **Database** | Dexie.js (IndexedDB) |
-| **Forms** | React Hook Form + Zod |
-| **Drag & Drop** | dnd-kit |
-| **PDF** | @react-pdf/renderer |
-| **Charts** | Recharts |
-| **Export** | xlsx + papaparse |
+---
+
+## 🎨 Screenshots
+
+### Dashboard
+![Dashboard](https://via.placeholder.com/800x400/2563eb/ffffff?text=Dashboard+View)
+
+### Kanban Board
+![Kanban](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Kanban+Board)
+
+### Order Detail + WhatsApp
+![Order](https://via.placeholder.com/800x400/10b981/ffffff?text=Order+Detail)
+
+---
 
 ## 📂 Project Structure
 
@@ -121,104 +129,153 @@ Baca [docs/INSTALLATION.md](docs/INSTALLATION.md) untuk panduan lengkap.
 warungwa/
 ├── src/
 │   ├── lib/
-│   │   ├── db/               # Database schema & seed
-│   │   ├── stores/           # Zustand stores
-│   │   ├── services/         # CRUD services
-│   │   ├── utils/            # Utilities (WhatsApp, PDF, etc)
-│   │   └── validators/       # Zod schemas
+│   │   ├── db.ts              # Dexie schema & types
+│   │   ├── store.ts           # Zustand stores
+│   │   ├── whatsapp.ts        # WhatsApp helpers
+│   │   ├── pdf-invoice.tsx    # PDF invoice component
+│   │   └── export.ts          # Export/import helpers
 │   ├── components/
-│   │   ├── ui/               # Reusable components (Button, Modal, Toast)
-│   │   ├── layout/           # Layout components
-│   │   ├── orders/           # Order Kanban board
-│   │   ├── products/         # Product components
-│   │   ├── customers/        # Customer components
-│   │   └── templates/        # Message template components
-│   ├── pages/                # Page components
-│   │   ├── dashboard/        # Dashboard with analytics
-│   │   ├── orders/           # Orders management
-│   │   ├── products/         # Products catalog
-│   │   ├── customers/        # Customer CRM
-│   │   ├── templates/        # Message templates
-│   │   ├── settings/         # App settings
-│   │   ├── reports/          # Reports & analytics
-│   │   └── login/            # Login (offline mode)
-│   ├── types/                # TypeScript definitions
-│   └── assets/               # Static assets
-├── docs/                     # Documentation
-└── public/                   # Public files
+│   │   ├── Layout.tsx         # Main layout
+│   │   ├── DataTable.tsx      # Reusable data table
+│   │   ├── KanbanBoard.tsx    # Kanban board
+│   │   ├── Modal.tsx          # Modal system
+│   │   └── Toast.tsx          # Toast notifications
+│   ├── pages/
+│   │   ├── Login.tsx          # Login page
+│   │   ├── Dashboard.tsx      # Dashboard
+│   │   ├── Orders.tsx         # Orders list + kanban
+│   │   └── OrderDetail.tsx    # Order detail
+│   ├── App.tsx                # Main app with routing
+│   ├── main.tsx               # Entry point
+│   └── index.css              # Tailwind styles
+├── docs/
+│   └── INSTALLATION.md        # Installation guide
+├── public/                    # Static assets
+├── package.json
+├── vite.config.ts
+└── tailwind.config.js
 ```
-
-## 🎯 Use Cases
-
-### 1. Toko Online Kecil
-- Kelola katalog produk
-- Terima order via form
-- Kirim konfirmasi & invoice via WhatsApp
-
-### 2. Reseller
-- Track supplier dan customer
-- Hitung margin per order
-- Template pesan untuk follow-up
-
-### 3. F&B / Warung Makan
-- Menu dengan varian (level pedas, ukuran)
-- Order delivery dengan area ongkir
-- Reminder untuk order repeat
-
-### 4. UMKM Multi-Cabang
-- Data terpisah per cabang
-- Report konsolidasi
-- Standarisasi template chat
-
-## ⚠️ Important Notes
-
-1. **Frontend-Only**: Aplikasi ini 100% client-side, tanpa backend
-2. **Data Storage**: Semua data tersimpan di IndexedDB browser
-3. **WhatsApp**: Menggunakan Click-to-Chat (wa.me), BUKAN WhatsApp Business API resmi
-4. **Backup**: Export data secara berkala untuk backup
-5. **Multi-User**: Role switching hanya demo, tidak ada real authentication
-6. **Offline Support**: App bisa jalan offline setelah pertama kali dimuat
-
-## 🔒 Privacy & Security
-
-- Semua data tersimpan **lokal di browser** Anda
-- Tidak ada data yang dikirim ke server
-- Tidak ada tracking atau analytics
-- Data tidak dibagikan ke pihak ketiga
-
-## 📖 Documentation
-
-- [Installation Guide](docs/INSTALLATION.md)
-- [API Reference](docs/API.md)
-- [Database Schema](docs/DATABASE.md)
-- [WhatsApp Integration](docs/WHATSAPP.md)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read our contributing guidelines first.
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details
-
-## 🙏 Acknowledgments
-
-- React & Vite teams
-- Dexie.js for excellent IndexedDB wrapper
-- Tailwind CSS for utility-first CSS
-- All open-source contributors
-
-## 💡 Roadmap
-
-- [ ] PWA support (installable app)
-- [ ] Offline sync indicator
-- [ ] Print invoice
-- [ ] QR code generator for products
-- [ ] WhatsApp Web automation (optional)
-- [ ] Backend integration (optional)
 
 ---
 
-**Made with ❤️ for UMKM Indonesia**
+## 🗄️ Data Storage
 
-*"Sederhana, Praktis, Siap Pakai"*
+**100% Offline** - Data disimpan di browser menggunakan **IndexedDB**:
+
+- ✅ Tidak butuh backend/server
+- ✅ Data persisten di browser
+- ✅ Backup/restore via JSON export
+- ✅ Privacy terjaga (data tidak keluar browser)
+
+---
+
+## 📱 WhatsApp Integration
+
+**PENTING:** Aplikasi ini menggunakan **Click-to-Chat** (`wa.me`) dan **TIDAK** menggunakan WhatsApp Business API resmi.
+
+### Cara Kerja:
+1. User klik tombol "Kirim WA" di order detail
+2. Pilih template pesan (misal: Konfirmasi Pesanan)
+3. Template otomatis terisi dengan data order:
+   ```
+   Halo {nama}, terima kasih sudah order! 🙏
+   
+   Pesanan #{order_id}
+   Total: {total}
+   Alamat: {alamat}
+   
+   Pesanan akan segera kami proses.
+   ```
+4. Browser membuka `wa.me/[nomor]?text=[pesan]`
+5. WhatsApp terbuka dengan pesan siap kirim
+
+### Auto-Reply (Suggested Reply)
+- Jam operasional diatur di Settings
+- Jika di luar jam, sistem menampilkan template auto-reply
+- User tinggal copy/paste ke WhatsApp
+
+---
+
+## 🔐 Security & Privacy
+
+- ✅ Data 100% disimpan lokal di browser
+- ✅ Tidak ada transmisi data ke server
+- ✅ Tidak perlu WhatsApp API credentials
+- ✅ Tidak ada tracking/analytics eksternal
+- ✅ Cocok untuk UMKM yang peduli privasi pelanggan
+
+---
+
+## 🎯 Use Cases
+
+### Toko Online Kecil
+- Kelola katalog produk
+- Terima order via form/chat
+- Kirim konfirmasi via WhatsApp
+- Track status pengiriman
+
+### Reseller/Dropshipper
+- Atur level harga pelanggan
+- Quick cart untuk order cepat
+- Template pesan untuk closing
+- Invoice otomatis
+
+### Bisnis F&B
+- Menu dengan varian (level pedas, ukuran)
+- Ongkir per area pengiriman
+- Reminder follow-up pelanggan
+- Laporan produk terlaris
+
+---
+
+## 📈 Roadmap
+
+- [ ] Import pelanggan dari CSV
+- [ ] Label printer integration
+- [ ] WhatsApp Business API integration (optional)
+- [ ] Integrasi payment gateway (Midtrans, Xendit)
+- [ ] Multi-currency support
+- [ ] Advanced analytics & insights
+- [ ] PWA dengan offline mode penuh
+- [ ] Notification system
+
+---
+
+## 🤝 Contributing
+
+Ini adalah proyek template/demo. Silakan fork dan modifikasi sesuai kebutuhan Anda!
+
+---
+
+## 📄 License
+
+MIT License - Bebas digunakan untuk proyek komersial maupun personal.
+
+---
+
+## 🆘 Support
+
+**Masalah atau pertanyaan?**
+1. Cek [docs/INSTALLATION.md](./docs/INSTALLATION.md)
+2. Buka browser DevTools dan cek console
+3. Clear IndexedDB dan refresh
+4. Pastikan Node.js versi 18+
+
+---
+
+## 🌟 Credits
+
+Dibuat dengan ❤️ untuk UMKM Indonesia
+
+**Tech Stack:**
+- React Team
+- Vite Team
+- Dexie.js by David Fahlander
+- Tailwind CSS
+- Dan seluruh open-source contributors
+
+---
+
+**⭐ Star repo ini jika bermanfaat!**
+
+**🚀 Siap deploy? `npm run dev` dan mulai jualan!**
