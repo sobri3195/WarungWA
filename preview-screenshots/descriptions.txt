@@ -1,0 +1,3 @@
+dashboard.png - Tampilan dashboard dengan statistik utama, grafik omzet, dan daftar pesanan terbaru.
+kanban.png - Tampilan kanban pipeline pesanan untuk drag & drop status.
+order-detail.png - Tampilan detail pesanan dengan ringkasan item, status, dan tombol WhatsApp.
