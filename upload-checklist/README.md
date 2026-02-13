@@ -7,10 +7,13 @@ Struktur folder mengikuti checklist upload marketplace:
 3. `main-files/warungwa-main-files.zip`
 4. `preview-screenshots/warungwa-preview-screenshots.zip`
 5. `optional-live-preview/warungwa-live-preview.zip`
-6. `optional-video-preview/README.md`
+6. `optional-video-preview/` (manual upload)
 
 ## Catatan penting
-Repo ini **tidak menyimpan file binary** di dalam folder checklist. Untuk menghasilkan semua file upload yang dibutuhkan, jalankan:
+Repo ini **tidak menyimpan file binary hasil upload** di Git. Semua artefak biner dibuat ulang dengan script generator.
+
+## Generate semua artefak upload
+Jalankan dari root project:
 
 ```bash
 ./upload-checklist/build-upload-files.sh
@@ -18,6 +21,9 @@ Repo ini **tidak menyimpan file binary** di dalam folder checklist. Untuk mengha
 
 Script tersebut akan:
 - menyalin thumbnail + inline preview image dari root project,
-- membuat ZIP main files (source code + docs, tanpa preview images),
+- membuat ZIP main files (source code + docs, tanpa aset preview/upload),
 - membuat ZIP preview screenshots,
 - membuat ZIP optional live preview.
+
+## Dokumentasi per folder
+Setiap folder checklist sudah memiliki `README.md` lokal untuk menjelaskan output, sumber data, dan cara pakai.

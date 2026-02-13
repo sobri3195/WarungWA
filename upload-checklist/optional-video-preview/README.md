@@ -1,9 +1,13 @@
 # Optional Video Preview
 
-Tempatkan file video demo dalam format MP4 (disarankan) dengan durasi 30-120 detik.
+Folder ini dipakai untuk video demo upload (opsional), **tidak** digenerate otomatis oleh script.
 
-Contoh nama file:
-- `warungwa-video-preview.mp4`
+## File yang diharapkan
+- `warungwa-video-preview.mp4` (nama contoh)
 
-Resolusi yang direkomendasikan untuk field **Video Preview Resolution**:
-- `1280x720`
+## Rekomendasi
+- Format: MP4 (H.264)
+- Durasi: 30–120 detik
+- Resolusi untuk field **Video Preview Resolution**: `1280x720`
+
+Jika video sudah siap, letakkan manual file video di folder ini saat proses final upload.
