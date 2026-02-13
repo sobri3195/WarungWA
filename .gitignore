@@ -36,3 +36,6 @@ build/
 
 # OS files
 Thumbs.db
+
+# Generated marketplace artifacts
+deliverables/*.zip

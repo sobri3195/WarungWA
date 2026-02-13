@@ -120,6 +120,18 @@ git log work --oneline -n 5
 
 ---
 
+
+## 📦 Paket ZIP untuk Marketplace
+
+Untuk kebutuhan upload marketplace (buyer files, preview screenshots, live preview), lihat panduan lengkap di:
+- [docs/ANALISIS_DAN_PAKET_ZIP.md](./docs/ANALISIS_DAN_PAKET_ZIP.md)
+
+Generate otomatis semua ZIP:
+
+```bash
+./scripts/package-deliverables.sh
+```
+
 ## 🎨 Screenshots
 
 ### Dashboard
