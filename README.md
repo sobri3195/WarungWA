@@ -108,6 +108,16 @@ vercel --prod
 
 📖 **Full installation guide:** [docs/INSTALLATION.md](./docs/INSTALLATION.md)
 
+### Git branch note
+
+Repository ini menggunakan branch kerja bernama `work` (bukan `main`).
+Jika tooling menampilkan error `Provided git ref main does not exist`, gunakan ref berikut:
+
+```bash
+git checkout work
+git log work --oneline -n 5
+```
+
 ---
 
 ## 🎨 Screenshots
