@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarungWA Preview Images</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        /* Thumbnail 80x80 */
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .thumbnail-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        /* Main Image 590x300 */
+        .main-image {
+            width: 590px;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px 50px;
+            color: white;
+        }
+        
+        .main-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .main-logo-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .main-logo-text {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        .main-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+        
+        .main-features {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .feature-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .main-stats {
+            position: absolute;
+            bottom: 30px;
+            left: 50px;
+            right: 50px;
+            display: flex;
+            gap: 30px;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .stat-icon {
+            font-size: 16px;
+        }
+        
+        /* Background decoration */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            top: -50px;
+            right: -30px;
+        }
+        
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            bottom: -40px;
+            right: 80px;
+        }
+        
+        .circle-3 {
+            width: 100px;
+            height: 100px;
+            top: 60px;
+            right: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Thumbnail 80x80 -->
+        <div class="thumbnail" id="thumbnail">
+            <div class="thumbnail-icon">
+                🛍️
+            </div>
+        </div>
+        
+        <br><br><br>
+        
+        <!-- Main Image 590x300 -->
+        <div class="main-image" id="main-image">
+            <!-- Background decoration -->
+            <div class="bg-circle circle-1"></div>
+            <div class="bg-circle circle-2"></div>
+            <div class="bg-circle circle-3"></div>
+            
+            <!-- Content -->
+            <div class="main-content">
+                <div class="main-logo">
+                    <div class="main-logo-icon">🛍️</div>
+                    <div class="main-logo-text">WarungWA</div>
+                </div>
+                
+                <div class="main-title">
+                    Kelola Katalog, Pelanggan & Pesanan
+                </div>
+                
+                <div class="main-features">
+                    <div class="feature-badge">📦 Pipeline Pesanan</div>
+                    <div class="feature-badge">💬 WhatsApp Ready</div>
+                    <div class="feature-badge">📄 Invoice PDF</div>
+                    <div class="feature-badge">📊 Analytics</div>
+                    <div class="feature-badge">🏪 Multi-Toko</div>
+                </div>
+            </div>
+            
+            <div class="main-stats">
+                <div class="stat">
+                    <span class="stat-icon">⚡</span>
+                    <span>100% Frontend</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">🔒</span>
+                    <span>Privacy First</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">💰</span>
+                    <span>No Backend Cost</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">🚀</span>
+                    <span>React 19 + Vite</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
