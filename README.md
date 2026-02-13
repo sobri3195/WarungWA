@@ -245,6 +245,10 @@ warungwa/
 
 Ini adalah proyek template/demo. Silakan fork dan modifikasi sesuai kebutuhan Anda!
 
+### Branching Strategy
+
+Repository ini menggunakan `main` sebagai branch default untuk kode yang stabil. Lihat [docs/BRANCH_STRUCTURE.md](./docs/BRANCH_STRUCTURE.md) untuk informasi lebih lanjut tentang struktur branch dan workflow development.
+
 ---
 
 ## 📄 License
