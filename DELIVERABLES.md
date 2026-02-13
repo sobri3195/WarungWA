@@ -8,6 +8,14 @@ Aplikasi **WarungWA** telah selesai dibuat sesuai dengan spesifikasi yang dimint
 
 ## 📦 Apa Yang Sudah Dibuat
 
+### Paket ZIP Distribusi
+
+- ✅ `deliverables/warungwa-buyer.zip` - Paket source utama tanpa preview screenshot.
+- ✅ `deliverables/warungwa-preview-screenshots.zip` - Preview screenshot + deskripsi.
+- ✅ `deliverables/warungwa-live-preview.zip` - Live preview statis berisi `index.html`.
+
+Detail analisis packaging tersedia di `docs/DELIVERABLES_ANALYSIS.md`.
+
 ### 1. **Core Architecture** ✅
 
 #### Database (IndexedDB via Dexie.js)

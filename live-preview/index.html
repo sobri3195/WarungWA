@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WarungWA - Live Preview</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      .hero {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        align-items: center;
+        background: linear-gradient(135deg, #1d4ed8, #4c1d95);
+        color: #fff;
+        padding: 32px;
+        border-radius: 24px;
+      }
+
+      .hero h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 3vw, 3rem);
+      }
+
+      .hero p {
+        margin: 0;
+        font-size: 1.05rem;
+        opacity: 0.9;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.2);
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        margin-top: 32px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 20px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+      }
+
+      .section-title {
+        margin: 48px 0 16px;
+        font-size: 1.4rem;
+      }
+
+      .callout {
+        margin-top: 32px;
+        padding: 20px 24px;
+        border-radius: 18px;
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+      }
+
+      .footer {
+        margin-top: 48px;
+        font-size: 0.95rem;
+        color: #475569;
+      }
+
+      .footer strong {
+        color: #1e293b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+        <div>
+          <div class="badge">100% Frontend • Offline-First • WhatsApp Ready</div>
+          <h1>WarungWA - UMKM Order Management</h1>
+          <p>
+            Kelola katalog, pelanggan, dan pipeline pesanan dengan tampilan kanban modern. Kirim pesan
+            WhatsApp dengan template otomatis dan cetak invoice PDF langsung dari browser.
+          </p>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Preview Highlights</h3>
+            <ul>
+              <li>Dashboard analytics + grafik omzet 7 hari</li>
+              <li>Kanban pipeline pesanan drag & drop</li>
+              <li>Detail pesanan lengkap + tombol kirim WA</li>
+              <li>Invoice PDF profesional & export data</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="section-title">Fitur Utama</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>CRM Pelanggan</h3>
+          <p>Manajemen pelanggan, tagging, level pricing, dan histori transaksi.</p>
+        </div>
+        <div class="card">
+          <h3>Pipeline Pesanan</h3>
+          <p>Kanban board dengan status Baru hingga Selesai, lengkap dengan riwayat perubahan.</p>
+        </div>
+        <div class="card">
+          <h3>WhatsApp Templates</h3>
+          <p>Template pesan multi-bahasa dengan variabel otomatis untuk closing cepat.</p>
+        </div>
+        <div class="card">
+          <h3>Offline & Aman</h3>
+          <p>Data tersimpan lokal di browser menggunakan IndexedDB tanpa backend.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Live preview ini adalah tampilan ringkas.</strong> Untuk pengalaman penuh, jalankan
+        aplikasi Vite dan jelajahi seluruh halaman WarungWA.
+      </div>
+
+      <div class="footer">
+        Dibuat untuk kebutuhan UMKM Indonesia. <strong>WarungWA</strong> siap dipakai sebagai template
+        marketplace atau demo produk.
+      </div>
+    </div>
+  </body>
+</html>

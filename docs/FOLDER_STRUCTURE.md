@@ -6,7 +6,25 @@
 warungwa/
 │
 ├── 📦 public/                    # Static assets
-│   └── favicon.ico
+│   └── vite.svg
+│
+├── 📂 preview-screenshots/       # Preview images + descriptions
+│   ├── dashboard.png
+│   ├── kanban.png
+│   ├── order-detail.png
+│   └── descriptions.txt
+│
+├── 📂 live-preview/              # Live preview static assets
+│   └── index.html
+│
+├── 📂 deliverables/              # Generated ZIP packages
+│   ├── warungwa-buyer.zip
+│   ├── warungwa-preview-screenshots.zip
+│   ├── warungwa-live-preview.zip
+│   └── README.md
+│
+├── 📂 scripts/                   # Utility scripts
+│   └── package-deliverables.sh
 │
 ├── 📂 src/
 │   │
@@ -45,6 +63,7 @@ warungwa/
 ├── 📂 docs/                      # Documentation
 │   ├── INSTALLATION.md          # ✅ Installation & deployment guide
 │   ├── FOLDER_STRUCTURE.md      # ✅ This file
+│   ├── DELIVERABLES_ANALYSIS.md # ✅ Detailed packaging analysis
 │   └── API_REFERENCE.md         # 📝 (Future: API documentation)
 │
 ├── 📄 Configuration Files
