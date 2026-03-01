@@ -135,6 +135,8 @@ Generate otomatis semua ZIP:
 ## 🎨 Screenshots
 
 ### Dashboard
+Berikut tampilan dashboard WarungWA:
+
 ![Dashboard WarungWA](./preview-screenshots/dashboard.png)
 
 ### Kanban Board
