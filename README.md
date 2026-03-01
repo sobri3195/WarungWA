@@ -135,13 +135,13 @@ Generate otomatis semua ZIP:
 ## 🎨 Screenshots
 
 ### Dashboard
-![Dashboard](https://via.placeholder.com/800x400/2563eb/ffffff?text=Dashboard+View)
+![Dashboard WarungWA](./preview-screenshots/dashboard.png)
 
 ### Kanban Board
-![Kanban](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Kanban+Board)
+![Kanban Board Pesanan](./preview-screenshots/kanban.png)
 
 ### Order Detail + WhatsApp
-![Order](https://via.placeholder.com/800x400/10b981/ffffff?text=Order+Detail)
+![Detail Pesanan dan Integrasi WhatsApp](./preview-screenshots/order-detail.png)
 
 ---
 
