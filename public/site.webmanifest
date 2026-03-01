@@ -1,0 +1,17 @@
+{
+  "name": "WarungWA",
+  "short_name": "WarungWA",
+  "description": "Dashboard UMKM untuk kelola toko online dan WhatsApp commerce.",
+  "lang": "id-ID",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/thumbnail-80x80.png",
+      "sizes": "80x80",
+      "type": "image/png"
+    }
+  ]
+}
