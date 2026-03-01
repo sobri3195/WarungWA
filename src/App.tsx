@@ -15,15 +15,16 @@ import { Products } from './pages/Products';
 import { TemplateChat } from './pages/TemplateChat';
 import { Reports } from './pages/Reports';
 import { Settings } from './pages/Settings';
+import { SeoManager } from './components/SeoManager';
 
 function App() {
   const { session, isLoading, loadSession } = useAppStore();
 
   useEffect(() => {
-    initializeApp();
-  }, []);
+    void initializeApp();
+  }, [loadSession]);
 
-  const initializeApp = async () => {
+  async function initializeApp() {
     try {
       // Initialize database
       await db.open();
@@ -38,7 +39,7 @@ function App() {
     } catch (error) {
       console.error('Failed to initialize app:', error);
     }
-  };
+  }
 
   if (isLoading) {
     return (
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <SeoManager />
       <ToastContainer />
       <ModalContainer />
       
